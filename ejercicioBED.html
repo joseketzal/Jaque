@@ -1,0 +1,489 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Examen Jaque</title>
+    <meta name="description" content="Ela Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+    
+    <link rel="stylesheet" href="C:\trabajoCasa\Jaque\primerExamen\bootstrap\bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="C:\trabajoCasa\Jaque\primerExamen\bootstrap\/pe-icon-7-stroke.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+
+    <script type="text/javascript">
+        
+    
+    function largestOfFour() {
+
+        arr = numberlist.value;
+       var largestNumber = [0,0,0,0];
+       for(var arrayIndex = 0; arrayIndex < arr.length; arrayIndex++) {
+        for(var subArrayIndex = 0; subArrayIndex < arr[arrayIndex].length; subArrayIndex++) {
+           if(arr[arrayIndex][subArrayIndex] > largestNumber[arrayIndex]) {         
+              largestNumber[arrayIndex] = arr[arrayIndex][subArrayIndex];
+            }
+        }
+    }
+        
+        resultlist.disabled = false;
+        resultlist.value = largestNumber;
+        resultlist.disabled = true;
+    }
+
+    function segundoResdo() {
+
+        var n = 0, m = 0, resp= 1;
+        n= numa.value;
+        m= numb.value;
+
+        dif = m-n;
+        if (dif <=0 ) {
+            segundoresult.value = 0;
+            alert("Parametros no cumplen con especificaci&oacute;n.")
+        } else {
+            resp = n;
+            for (f=m; m==f; f++) {
+                n = n +1;
+                resp = resp +n;
+            }
+            segundoresult.value = resp;
+          }
+        }
+
+    function tercerEjercicio(){
+        
+        //Aqui debe ir algoritnmo para resolver este ejercicio
+    }
+
+    function cuartoEjercicio(){
+        
+        var sinDoble = "";
+        var puno = 0;
+        var pdos = 0;
+        var ptre = 0;
+        var pcua = 0;
+        var pcin = 0;
+        var psei = 0;
+        var psie = 0;
+        var poch = 0;
+        var pnue = 0;
+        var pcero = 0;
+        cadenaquitaDoble = cadenaDuplica.value;
+
+        for (i=0; i<=cadenaDuplica.length; i++) {
+
+            caraSol = cadenaDuplica.charAt(i,1);
+            switch(caraSol) {
+            case 1:
+                sinDoble = sinDoble + "1";
+                puno = 1;
+            case 2:
+                sinDoble = sinDoble + "2";
+                pdos = 1;
+            case 3:
+                sinDoble = sinDoble + "3";
+                ptre = 1;
+            case 4:
+                sinDoble = sinDoble + "4";
+                pcua = 1;
+            case 5:
+                sinDoble = sinDoble + "5";
+                pcin = 1;
+            case 6:
+                sinDoble = sinDoble + "6";
+                psei = 1;
+            case 7:
+                sinDoble = sinDoble + "7";
+                psie = 1;
+            case 8:
+                sinDoble = sinDoble + "8";
+                poch = 1;
+            case 9:
+                sinDoble = sinDoble + "9";
+                pnue = 1;
+            case 0:
+                sinDoble = sinDoble + "0";
+                pcero =1;
+        }
+
+        //if cualquier valor P es = 1 entonces eliminar el último caracter.
+            
+            cuatroRes.value = sinDoble;
+
+    }
+}
+
+
+
+    function quintoEjercicio(){
+        
+        var rvalor = 0, pparentesis = 0, pllave = 0, pcorche= 0;
+        var caraSol = "";
+        cadenaingre = cadenaPareCor.value;
+
+        for (i=0; i<=cadenaingre.length; i++) {
+            caraSol = cadenaingre.charAt(i,1);
+            if (caraSol == "(" ) {
+                pparentesis = pparentesis +1;
+            }
+            if (caraSol == ")" ) {
+                pparentesis = pparentesis -1;
+
+            }
+            if (caraSol == "{" ) {
+                pllave = pllave +1;
+            }
+            if (caraSol == "}" ) {
+                pllave = pllave -1;
+            }
+            if (caraSol == "[" ) {
+                pcorche = pcorche +1;
+            }
+            if (caraSol == "]" ) {
+                pcorche = pcorche -1;
+            }
+        }
+            
+            rvalor = pparentesis + pllave + pcorche;
+            if ( rvalor == 0 ) {
+                quintaR.disabled = false;
+                quintaR.value = "Cadena Balanceada";
+                quintaR.disabled = true;
+
+            }
+            else {
+                quintaR.disabled = false;
+                quintaR.value = "Favor de balancear la cadena";
+                quintaR.disabled = true;
+            }
+
+    }
+
+    function sextoEjercicio(){
+        //Ingresa el algoritmo correspondiente 
+    }
+
+
+    </script>
+
+</head>
+<body>
+    <!-- Right Panel -->
+    <form name="examneAJaque" id="examneAJaque">
+    <div id="right-panel" class="right-panel">
+        <!-- Header-->
+        <header id="header" class="header">
+            <div class="top-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
+                    <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                </div>
+            </div>
+            <!--    <div class="top-right">
+                    </div> -->
+
+                </div>
+            </div>
+        </header>
+        <!-- /#header -->
+        <!-- Breadcrumbs-->
+        <div class="breadcrumbs">
+            <div class="breadcrumbs-inner">
+                <div class="row m-0">
+                    <div class="col-sm-4">
+                        <div class="page-header float-left">
+                            <div class="page-title">
+                                <h1>&nbsp;</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="page-header float-right">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">&nbsp;</a></li>
+                                    <li class="active">&nbsp;</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.breadcrumbs-->
+        <!-- Content -->
+                    <div class="col-sm-12 mb-4">
+                        <div class="card-group">
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-users"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Escribir una función que reciba un arreglo de números y obtenga el subarreglo más
+grande en el que cada elemento</span>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span>del subarreglo sea mayor que el anterior.
+Por ejemplo si el arreglo es [3,2,5,9,1,3] tiene regresar [2,5,9]</span>   
+                                    </div>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 100%; height: 5px;"></div>
+                                </div>
+                            </div>
+                                <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Primer respuesta</span>   
+                                    </div>
+                                    <small>Ingrese la secuencia num&eacute;rica solo n&uacute;meros</small>
+                                    <input type="number" id="numberlist" placeholder="Ingrese solo n&uacute;meros" class="form-control">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="largestOfFour(numberlist);">Resolver</button>
+                                    <input type="text" id="resultlist" name="resultlist" placeholder="Resultado" class="form-control" disabled="true" value="">
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-sm-12 mb-4">
+                        <div class="card-group">
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-user-plus"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Escribir una función que reciba 2 enteros no negativos n y m y obtenga el resultado de n+(n+1)+(n+2)+...+m.</span>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Por ejemplo si los numeros son 3 y 6 la respuesta debe ser 18 que es el resultado de 3+4+5+6.</span>
+                                    </div>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-2" style="width: 100%; height: 5px;">
+                                    </div>
+                                    </div>
+                                </div>
+                                    
+                                    <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Segunra respuesta</span>   
+                                    </div>
+                                    <small>Ingrese primer n&uacute;mero</small>
+                                    <input type="number" id="numa" placeholder="Ingrese solo n&uacute;meros" class="form-control">
+                                    <small>Ingrese segundo n&uacute;mero</small>
+                                    <input type="number" id="numb" placeholder="Ingrese solo n&uacute;meros" class="form-control">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="segundoResdo();">Resolver</button>
+                                    <input type="number" id="segundoresult" name="segundoresult" placeholder="" class="form-control" disabled="true">
+                                </div>
+                            </div>
+                           </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-12 mb-4">
+                      <div class="card-group">
+                        <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-cart-plus"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Dado un arreglo de números desordenado y un entero k, escribe una función que encuentre el k-ésimo elemento más grande.</span>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Por ejemplo si el arreglo es [7,2,5,9,8,3] y k es 2 debe regresar 8.38</span>
+                                    </div>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-3" style="width: 100%; height: 5px;"></div>
+                                </div>
+                            </div>
+                                <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Tercer respuesta</span>   
+                                    </div>
+                                    <small>Ingrese secuencia num&eacute;rica</small>
+                                    <input type="number" id="serieTres" placeholder="Ingrese solo n&uacute;meros" class="form-control">
+                                    <small>Ingrese un n&uacute;nero entero</small>
+                                    <input type="number" id="numTres" placeholder="Ingrese solo n&uacute;meros" class="form-control">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="();">Resolver</button>
+                                    <input type="number" id="terretlist" placeholder="Resultado" class="form-control" disabled="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 mb-4">
+                      <div class="card-group">
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-pie-chart"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Escribe una función que reciba un arreglo de números y quite los elementos duplicados</span>
+                                    </div>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-4" style="width: 100%; height: 5px;"></div>
+                                </div>
+                            </div>
+                                 
+                                 <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Cuarta respuesta</span>
+                                    </div>
+                                    <small>Ingrese una secuencia num&eacute;rica.</small>
+                                    <input type="number" id="cadenaDuplica" name="cadenaDuplica" placeholder="Ingrese solo n&uacute;meros" class="form-control">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="cuartoEjercicio();">Resolver</button>
+                                    <input type="text" id="cuatroRes" name="cuatroRes" placeholder="Resultado" class="form-control" disabled="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 mb-4">
+                      <div class="card-group">
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <div class="h4 mb-0">Dada una cadena de paréntesis y corchetes escribe una  función que regresa si la cadena está bien balanceada,</div>
+                                    <div class="h4 mb-0">es decir, por cada paréntesis o corchete que abre hay uno al mismo nivel que que cierra.</div>
+                                    <div class="h4 mb-0">Por ejemplo si recibe ‘([])’ o ‘[()[]]’ tiene que regresar true y si recibe ‘([)]’ tiene que regresar false.</div>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-5" style="width: 100%; height: 5px;"></div>
+                                </div>
+                            </div>
+                                
+                                <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Quinta respuesta</span>   
+                                    </div>
+                                    <small>Ingrese una cadena de "{}", ()" y "[]" </small>
+                                    <input type="text" id="cadenaPareCor" name="cadenaPareCor" placeholder="Ingrese caracteres (), {} ó []" class="form-control">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="quintoEjercicio();">Resolver</button>
+                                    <input type="text" id="quintaR" name="quintaR" placeholder="Resultado" class="form-control" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 mb-4">
+                      <div class="card-group">
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-comments-o"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Tienes un conjunto de clases que tienen una hora de inicio y una de final, hay que acomodarlas en el menor número de salones </span>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">sin que se traslapan, una clase de 11:00 a 14:00 no puede estar en el mismo salón que una de 12:00 a 15:00.</span>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Escribe una función que encuentre ese número de salones, por ejemplo si tienes clases de 11:00</span>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">a 14:00, 12:00 a 15:00 y 14:30 a 16:00 el menor número de salones es 2.</span>
+                                    </div>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-1" style="width: 100%; height: 5px;"></div>
+                                </div>
+                            </div>
+                                <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Sexta respuesta</span>
+                                    </div>
+                                    <small>Ingrese un horario</small>
+                                    <input type="number" id="numberlistseis" placeholder="Ingrese solo n&uacute;meros" class="form-control">
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="();">Resolver</button>
+                                    <input type="number" id="seisres" placeholder="Resultado" class="form-control" disabled="true">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 mb-4">
+                      <div class="card-group">
+                            <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                        <i class="fa fa-users"></i>
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Utilizando la herramienta que creas necesaria realiza pruebas unitarias para los
+ejercicios anteriores.</span>
+                                    </div>
+                                    <div class="progress progress-xs mt-3 mb-0 bg-flat-color-2" style="width: 100%; height: 5px;"></div>
+                                </div>
+                            </div>
+                            
+                                <div class="card col-md-6 no-padding ">
+                                <div class="card-body">
+                                    <div class="h1 text-muted text-right mb-4">
+                                    </div>
+                                    <div class="h4 mb-0">
+                                        <span class="count">Respuesta</span>   
+                                    </div>
+                                    <small>Instale en Visual Studio el modulo -ava, aunque me falto tiempo</small>
+                                    <small>para la definici&oacute;n de las pruebas</small>
+                                    <img src="C:\trabajoCasa\Jaque\primerExamen\images\versionAVA.jpg">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        </div>
+                    </div>
+                </div> <!--.row -->
+            </div> <!-- .animated -->
+        </div>
+        <!-- /.content -->
+        <div class="clearfix"></div>
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-inner bg-white">
+                <div class="row">
+                    <div class="col-sm-6">
+                        &nbsp;
+                    </div>
+                    <div class="col-sm-6 text-right">
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- /.site-footer -->
+    </div>
+    <!-- /#right-panel -->
+
+    </form>    
+</body>
+</html>
